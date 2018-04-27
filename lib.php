@@ -25,7 +25,6 @@ function local_theme_esco_extend_settings_navigation($settingsnav, $context)
 
     if ($settingnode = $settingsnav->find('root', navigation_node::TYPE_SITE_ADMIN)) {
         $label = get_string('menulink', 'local_theme_esco');
-        var_dump($label);
         $url = new moodle_url('/local/theme_esco/manage.php', array('id' => $PAGE->course->id));
         $foonode = navigation_node::create(
             $label,

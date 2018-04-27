@@ -27,4 +27,4 @@ defined('MOODLE_INTERNAL') || die;
 
 $plugin->version   = 2018042700;
 $plugin->requires  = 2017110800;
-$plugin->component = 'theme_esco';
+$plugin->component = 'local_theme_esco';
