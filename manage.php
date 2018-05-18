@@ -37,8 +37,7 @@ $PAGE->set_pagelayout('admin');
 
 
 if (!empty($USER->profile['etablissement'])) {
-    $etablissement = strtolower($USER->profile['etablissement']);
-//    $etablissement = strtolower("Amboise");
+    $etablissement = strtolower(str_replace(" ","",$USER->profile['etablissement']));
 } else {
     $etablissement = "";
 }
