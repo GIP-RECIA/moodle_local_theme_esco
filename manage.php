@@ -23,6 +23,7 @@
  */
 
 require('../../config.php');
+require('./lib.php');
 require_once($CFG->libdir . '/adminlib.php');
 
 require_login(0, false);
@@ -35,12 +36,7 @@ $PAGE->set_url('/local/theme_esco/manage.php');
 $PAGE->set_pagetype('admin-setting-theme');
 $PAGE->set_pagelayout('admin');
 
-
-if (!empty($USER->profile['etablissement'])) {
-    $etablissement = strtolower(str_replace(" ","",$USER->profile['etablissement']));
-} else {
-    $etablissement = "";
-}
+$etablissement = local_theme_esco_theme_name(empty($USER->profile['etablissement']) ? null : $USER->profile['etablissement']);
 
 $configs = $DB->get_records('config_plugins', array("plugin" => "theme_$etablissement"));
 

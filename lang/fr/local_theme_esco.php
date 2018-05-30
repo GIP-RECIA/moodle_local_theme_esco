@@ -23,7 +23,8 @@ defined('MOODLE_INTERNAL') || die();
 
 $string['themenotexisting'] = "Il n'y a aucun thème qui correspond à votre établissement";
 $string['intro'] = "Cette page vous permet de personnaliser le thème lié à votre établissement";
-$string['menulink'] = "Paramètre Theme Etablissemnt";
+$string['menulink'] = "Paramètre Thème Etablissement";
 $string['theme:access'] = "Gestion du thème d'établissement";
+$string['theme_esco'] = $string['menulink'];
 $string['pluginname'] = 'Gestion Theme ESCO';
 $string['pluginname_desc'] = 'Le plugin de Gestion de Theme ESCO permet à un établissement de gérer les paramètres associé à leur thème.';
