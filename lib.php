@@ -60,6 +60,9 @@ function local_theme_esco_field_type($name)
     if (stripos($name, "enabled") !== false) {
         return "checkbox";
     }
+    if (stripos($name, "content") !== false && stripos($name, "footer") !== false) {
+        return "htmleditor";
+    }
     return "text";
 }
 
@@ -118,4 +121,32 @@ function local_theme_esco_theme_name($establishment){
     $texte = preg_replace('#&[^;]+;#', '', $texte);
 
     return $texte;
+}
+
+/**
+ * Retrieve custom libs for the given theme
+ * @param $establishment
+ * @return array
+ */
+function local_theme_esco_get_libs($establishment){
+    global $CFG;
+
+    $folders_scan = array("lib","libs");
+    $libs = array();
+
+    foreach($folders_scan as $to_scan){
+        $folder = $CFG->dirroot . "/theme/$establishment/$to_scan/";
+        $files = scandir($folder);
+        if($files === false){
+            continue;
+        }
+        foreach($files as $file){
+            if(in_array($file, array(".",".."))){
+                continue;
+            }
+            $libs[] = $folder . $file;
+        }
+    }
+    return $libs;
+
 }

@@ -19,6 +19,11 @@ defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->libdir . '/adminlib.php');
 
+$libs = local_theme_esco_get_libs($etablissement);
+foreach($libs as $lib){
+    require_once $lib;
+}
+
 $admin_page = new admin_settingpage("theme_esco", "theme_esco", "local/theme_esco:access");
 
 $slidercount = get_config("theme_$etablissement", 'slidercount');
@@ -27,7 +32,10 @@ foreach ($configs as $config) {
     if (preg_match("/(p)[0-9](\cap)?/", $config->name) == 1) {
         continue;
     }
-    $classname = "admin_setting_config" . local_theme_esco_field_type($config->name);
+    $classname = $etablissement . "_setting_config" . local_theme_esco_field_type($config->name);
+    if(!class_exists($classname)){
+        $classname = "admin_setting_config" . local_theme_esco_field_type($config->name);
+    }
 
     $name = $config->plugin . "/" . $config->name;
     $title = get_string($config->name, $config->plugin);
