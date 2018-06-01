@@ -87,7 +87,8 @@ function local_theme_esco_field_default($name, $value)
  */
 function local_theme_esco_field_callback($name)
 {
-    if(local_theme_esco_field_type($name) == "storedfile"){
+    $fieldtype = local_theme_esco_field_type($name);
+    if(in_array($fieldtype, array("storedfile","htmleditor"))){
         return "theme_reset_all_caches";
     }
     return null;
