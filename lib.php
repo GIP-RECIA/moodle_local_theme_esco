@@ -54,6 +54,9 @@ function local_theme_esco_field_type($name)
     if (in_array($name, array("p1cap", "p2cap", "p3cap")) !== false) {
         return "htmleditor";
     }
+    if (in_array($name, array("customcss", "jssection")) !== false) {
+        return "textarea";
+    }
     if (stripos($name, "color") !== false) {
         return "colourpicker";
     }
