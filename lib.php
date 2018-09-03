@@ -91,7 +91,7 @@ function local_theme_esco_field_default($name, $value)
 function local_theme_esco_field_callback($name)
 {
     $fieldtype = local_theme_esco_field_type($name);
-    if(in_array($fieldtype, array("storedfile","htmleditor","color"))){
+    if(in_array($fieldtype, array("storedfile","htmleditor","colourpicker"))){
         return "theme_reset_all_caches";
     }
     return null;
