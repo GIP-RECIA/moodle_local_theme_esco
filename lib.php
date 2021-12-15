@@ -113,7 +113,7 @@ function local_theme_esco_theme_name($establishment){
     $texte = strtolower(str_replace(" ","",$establishment));
 
     //Conversion en caractères HTML
-    $texte = htmlentities($texte, ENT_NOQUOTES, $texte);
+    $texte = htmlentities($texte, ENT_NOQUOTES, 'UTF-8');
 
     //Remplacement des caratères accentués
     $texte = preg_replace('#&([A-za-z])(?:acute|grave|cedil|circ|orn|ring|slash|th|tilde|uml);#', '\1', $texte);
