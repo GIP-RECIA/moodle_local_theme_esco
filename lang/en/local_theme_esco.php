@@ -27,3 +27,5 @@ $string['menulink'] = "Establishment Theme Settings";
 $string['theme:access'] = "Establishment Theme Management";
 $string['pluginname'] = 'ESCO Theme Management';
 $string['pluginname_desc'] = 'The ESCO Theme Management allow user to manage settings related to their establishment theme.';
+$string['region-side-pre'] = 'Right';
+$string['choosereadme'] = $string['pluginname_desc'];

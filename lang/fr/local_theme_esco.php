@@ -28,3 +28,5 @@ $string['theme:access'] = "Gestion du thème d'établissement";
 $string['theme_esco'] = $string['menulink'];
 $string['pluginname'] = 'Gestion Theme ESCO';
 $string['pluginname_desc'] = 'Le plugin de Gestion de Theme ESCO permet à un établissement de gérer les paramètres associé à leur thème.';
+$string['region-side-pre'] = 'Right';
+$string['choosereadme'] = $string['pluginname_desc'];
